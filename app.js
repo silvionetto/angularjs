@@ -23,7 +23,19 @@
 					price: 2.95,
 					description: 'Stone',
 					canPurchase: true,
-					soudOut: false
+					soudOut: false,
+					reviews: [
+						{
+							stars: 5,
+							body: "I love this product!",
+							author: "joe@joe.com"
+						},
+						{
+							stars: 1,
+							body: "I hate this product!",
+							author: "hate@hate.com"
+						}
+					]
 				},
 				{
 					name: 'Dodecahedron Plus',
