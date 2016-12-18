@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+	<title>Index</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+
+		(function(){
+			var app = angular.module('store', []);
+
+			app.controller('StoreController', function(){
+				this.products = gems;
+			});
+
+			var gems = [
+				{
+					name: 'Dodecahedron',
+					price: 2.95,
+					description: 'Stone',
+					canPurchase: true,
+					soudOut: false
+				},
+				{
+					name: 'Dodecahedron Plus',
+					price: 5.95,
+					description: 'Stone',
+					canPurchase: true,
+					soudOut: false
+				},
+				{
+					name: 'Pentagonal Gem',
+					price: 5.95,
+					description: 'Different Stone',
+					canPurchase: false,
+					soudOut: true
+				},
+			];
+		})();
+	</script>
+</head>
+<body ng-controller="StoreController as store">
+<div ng-repeat="product in store.products | orderBy:'-price'" ng-hide="product.soudOut">
+	<h1>{{ product.name | uppercase }}</h1>
+	<h2>{{ product.price | currency }}</h2>
+	<button ng-show="store.product.canPurchase">Add to Cart</button>
+	<section>
+		<ul>
+			<li> <a href="" ng-click="tab = 1">Description</a> </li>
+			<li> <a href="" ng-click="tab = 2">Specification</a> </li>
+			<li> <a href="" ng-click="tab = 3">Reviews</a> </li>
+		</ul>
+	</section>
+	{{tab}}
+</div>
+</body>
+</html>
